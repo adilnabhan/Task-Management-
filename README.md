@@ -1,173 +1,59 @@
-# Task Management System
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-## Overview
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-This is a simple Task Management System built using **Laravel** and **MySQL**. The application allows authenticated users to create, view, update, and delete their own tasks.
+## About Laravel
 
-## Features
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- ✅ User Registration & Login
-- ✅ Task CRUD Operations
-- ✅ Task Ownership Management
-- ✅ Authentication & Authorization
-- ✅ Form Validation
-- ✅ MySQL Database Integration
-- ✅ Responsive UI
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-## Tech Stack
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-| Technology       | Details          |
-|------------------|------------------|
-| **Framework**    | Laravel          |
-| **Database**     | MySQL            |
-| **Frontend**     | Blade / Bootstrap|
-| **Authentication** | Laravel Breeze |
+## Learning Laravel
 
-## Installation & Setup
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
 
-### 1. Clone Repository
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-```bash
-git clone <your-github-repository-link>
-cd task-management-system
-```
+## Laravel Sponsors
 
-### 2. Install Dependencies
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-```bash
-composer install
-npm install
-```
+### Premium Partners
 
-### 3. Create Environment File
+- **[Vehikl](https://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development)**
+- **[Active Logic](https://activelogic.com)**
 
-```bash
-cp .env.example .env
-```
+## Contributing
 
-### 4. Configure Database
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-Update `.env` file:
+## Code of Conduct
 
-```env
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=task_management
-DB_USERNAME=root
-DB_PASSWORD=
-```
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-### 5. Generate Application Key
+## Security Vulnerabilities
 
-```bash
-php artisan key:generate
-```
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-### 6. Run Migrations
+## License
 
-```bash
-php artisan migrate
-```
-
-### 7. Install Laravel Breeze Authentication
-
-```bash
-composer require laravel/breeze --dev
-php artisan breeze:install
-npm install && npm run dev
-php artisan migrate
-```
-
-### 8. Start Development Server
-
-```bash
-php artisan serve
-```
-
-**Application URL:** [http://127.0.0.1:8000](http://127.0.0.1:8000)
-
-## Database Structure
-
-### `users` table
-
-| Column       | Description         |
-|--------------|---------------------|
-| `id`         | Primary Key         |
-| `name`       | User's name         |
-| `email`      | User's email        |
-| `password`   | Hashed password     |
-| `created_at` | Timestamp           |
-| `updated_at` | Timestamp           |
-
-### `tasks` table
-
-| Column        | Description              |
-|---------------|--------------------------|
-| `id`          | Primary Key              |
-| `title`       | Task title               |
-| `description` | Task description         |
-| `status`      | Pending / Completed      |
-| `due_date`    | Task due date            |
-| `user_id`     | Foreign key (users)      |
-| `created_at`  | Timestamp                |
-| `updated_at`  | Timestamp                |
-
-## Task Features
-
-Each authenticated user can:
-
-- 📝 Create tasks
-- 👀 View own tasks
-- ✏️ Edit tasks
-- 🗑️ Delete tasks
-
-### Validation Rules
-
-- Title is required
-- Due date must be valid
-- Status should be `Pending` or `Completed`
-
-## Authentication
-
-- Only logged-in users can access task routes.
-- Users can only manage their own tasks.
-- Unauthorized access is restricted.
-
-## Optional Features
-
-- 🔄 Soft Deletes
-- 🔍 Task Filtering
-- 🔎 Search Functionality
-- 📄 Pagination
-
-## Useful Laravel Commands
-
-```bash
-# Create Model with Migration
-php artisan make:model Task -m
-
-# Create Controller
-php artisan make:controller TaskController --resource
-
-# Run Migration
-php artisan migrate
-
-# Rollback Migration
-php artisan migrate:rollback
-```
-
-## API / Routes Example
-
-```php
-Route::middleware(['auth'])->group(function () {
-    Route::resource('tasks', TaskController::class);
-});
-```
-
-## Author
-
-**Adil Nabhan**
-- Backend Developer
-- Django & REST API Developer
-- React & Full Stack Developer
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
